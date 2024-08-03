@@ -1,7 +1,9 @@
 module github.com/btcsuite/btcwallet
 
 // custom versions that add testnet4 support
-replace github.com/btcsuite/btcd => github.com/impa10r/btcd v0.0.0-20240803140156-82cf5d107f79
+replace github.com/btcsuite/btcd => github.com/impa10r/btcd v0.0.0-20240803152009-0816848dca62
+
+//replace github.com/btcsuite/btcd => ./../btcd
 
 require (
 	github.com/btcsuite/btcd v0.24.2-beta.rc1.0.20240625142744-cc26860b4026

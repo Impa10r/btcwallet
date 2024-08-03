@@ -145,6 +145,7 @@ func NewBitcoindConn(cfg *BitcoindConfig) (*BitcoindConn, error) {
 		DisableConnectOnNew:  true,
 		DisableTLS:           true,
 		HTTPPostMode:         true,
+		Params:               cfg.ChainParams.Name,
 	}
 	client, err := rpcclient.New(clientCfg, nil)
 	if err != nil {
