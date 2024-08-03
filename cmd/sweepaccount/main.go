@@ -79,12 +79,14 @@ func init() {
 		os.Exit(1)
 	}
 
-	if opts.TestNet3 && opts.SimNet {
+	if (opts.TestNet3 || opts.TestNet4) && opts.SimNet {
 		fatalf("Multiple bitcoin networks may not be used simultaneously")
 	}
 	var activeNet = &netparams.MainNetParams
 	if opts.TestNet3 {
 		activeNet = &netparams.TestNet3Params
+	} else if opts.TestNet4 {
+		activeNet = &netparams.TestNet4Params
 	} else if opts.SimNet {
 		activeNet = &netparams.SimNetParams
 	}
